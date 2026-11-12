@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 890" role="img" aria-labelledby="title desc">
+  <title id="title">One10 product intake path</title>
+  <desc id="desc">A request goes through gap analysis, a core-versus-custom decision, a one-pager or PRD, then the roadmap. Gap-analysis fields include Fixed vs Custom, in RFP or SOW, estimate confidence, and an Azure DevOps link.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}
+      .k{font:600 12px Inter,system-ui,sans-serif;fill:#a24ca1;letter-spacing:.02em}
+      .card{fill:#f5f5f5;stroke:#e8e8e8;stroke-width:1}
+      .num{font:800 15px Inter,system-ui,sans-serif;fill:#fff}
+      .label{font:700 16px Inter,system-ui,sans-serif;fill:#000;letter-spacing:-.03em}
+      .sub{font:500 13px Inter,system-ui,sans-serif;fill:#555}
+      .icon{fill:none;stroke:#a24ca1;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .arrow{fill:none;stroke:#3d5af1;stroke-width:2;stroke-linecap:round}
+      .strip-label{font:600 12px Inter,system-ui,sans-serif;fill:#a24ca1;letter-spacing:.02em}
+      .pill{fill:#fff;stroke:#e9d3e9;stroke-width:1}
+      .pill-t{font:600 12px Inter,system-ui,sans-serif;fill:#a24ca1}
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#3d5af1"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="390" height="890" rx="4"/>
+  <text class="k" x="20" y="32">One10 product intake</text>
+
+  <!-- 5 compact rows, h=112, gap for arrow 22, start 48. 5*112=560 + 4*22=88 + 48 = 696. Then strip. -->
+  <g transform="translate(20,48)">
+    <rect class="card" width="350" height="112" rx="4"/>
+    <circle cx="30" cy="30" r="15" fill="#a24ca1"/>
+    <text class="num" x="30" y="35" text-anchor="middle">1</text>
+    <text class="label" x="56" y="58">Request</text>
+    <text class="sub" x="56" y="82">A client or RFP request comes in</text>
+    <g class="icon" transform="translate(300,36)">
+      <rect x="4" y="2" width="24" height="30" rx="3"/>
+      <path d="M10 12 h12M10 18 h12M10 24 h7"/>
+    </g>
+  </g>
+
+  <g transform="translate(20,182)">
+    <rect class="card" width="350" height="112" rx="4"/>
+    <circle cx="30" cy="30" r="15" fill="#a24ca1"/>
+    <text class="num" x="30" y="35" text-anchor="middle">2</text>
+    <text class="label" x="56" y="58">Gap analysis</text>
+    <text class="sub" x="56" y="82">Same fields, every estimate</text>
+    <g class="icon" transform="translate(298,36)">
+      <rect x="2" y="4" width="30" height="26" rx="3"/>
+      <path d="M8 14 h18M8 20 h10"/>
+      <path d="M22 22 l3 3 6-8"/>
+    </g>
+  </g>
+
+  <g transform="translate(20,316)">
+    <rect class="card" width="350" height="112" rx="4"/>
+    <circle cx="30" cy="30" r="15" fill="#a24ca1"/>
+    <text class="num" x="30" y="35" text-anchor="middle">3</text>
+    <text class="label" x="56" y="58">Core vs custom</text>
+    <text class="sub" x="56" y="82">An explicit call, not a default to custom</text>
+    <g class="icon" transform="translate(302,32)">
+      <path d="M16 4 v12"/>
+      <path d="M16 16 L6 26 v8"/>
+      <path d="M16 16 L26 26 v8"/>
+      <circle cx="6" cy="38" r="3"/>
+      <circle cx="26" cy="38" r="3"/>
+    </g>
+  </g>
+
+  <g transform="translate(20,450)">
+    <rect class="card" width="350" height="112" rx="4"/>
+    <circle cx="30" cy="30" r="15" fill="#a24ca1"/>
+    <text class="num" x="30" y="35" text-anchor="middle">4</text>
+    <text class="label" x="56" y="58">One-pager / PRD</text>
+    <text class="sub" x="56" y="82">Outcomes, trade-offs, and open questions</text>
+    <g class="icon" transform="translate(300,36)">
+      <rect x="8" y="2" width="22" height="30" rx="3"/>
+      <path d="M14 12 h10M14 18 h10M14 24 h6"/>
+      <path d="M4 8 h6 v-6"/>
+    </g>
+  </g>
+
+  <g transform="translate(20,584)">
+    <rect class="card" width="350" height="112" rx="4"/>
+    <circle cx="30" cy="30" r="15" fill="#a24ca1"/>
+    <text class="num" x="30" y="35" text-anchor="middle">5</text>
+    <text class="label" x="56" y="58">Roadmap</text>
+    <text class="sub" x="56" y="82">Core work is planned; custom work is scoped</text>
+    <g class="icon" transform="translate(300,38)">
+      <path d="M4 32 V12"/>
+      <path d="M4 32 H32"/>
+      <path d="M11 32 V20"/>
+      <path d="M18 32 V16"/>
+      <path d="M25 32 V8"/>
+    </g>
+  </g>
+
+  <g class="arrow" marker-end="url(#arr)">
+    <path d="M195 164 V174"/>
+    <path d="M195 298 V308"/>
+    <path d="M195 432 V442"/>
+    <path d="M195 566 V576"/>
+  </g>
+
+  <text class="strip-label" x="20" y="730">Inside the gap analysis</text>
+  <!-- wrapping pills -->
+  <g transform="translate(20,748)">
+    <rect class="pill" width="136" height="34" rx="17"/>
+    <text class="pill-t" x="68" y="22" text-anchor="middle">Fixed vs Custom</text>
+  </g>
+  <g transform="translate(164,748)">
+    <rect class="pill" width="72" height="34" rx="17"/>
+    <text class="pill-t" x="36" y="22" text-anchor="middle">In RFP</text>
+  </g>
+  <g transform="translate(244,748)">
+    <rect class="pill" width="76" height="34" rx="17"/>
+    <text class="pill-t" x="38" y="22" text-anchor="middle">In SOW</text>
+  </g>
+  <g transform="translate(20,790)">
+    <rect class="pill" width="168" height="34" rx="17"/>
+    <text class="pill-t" x="84" y="22" text-anchor="middle">Estimate confidence</text>
+  </g>
+  <g transform="translate(196,790)">
+    <rect class="pill" width="108" height="34" rx="17"/>
+    <text class="pill-t" x="54" y="22" text-anchor="middle">ADO ticket</text>
+  </g>
+  <g transform="translate(20,832)">
+    <rect class="pill" width="188" height="34" rx="17"/>
+    <text class="pill-t" x="94" y="22" text-anchor="middle">Already in the platform?</text>
+  </g>
+</svg>
