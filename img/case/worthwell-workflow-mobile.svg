@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1180" width="390" height="1180" role="img" aria-labelledby="title desc">
+  <title id="title">Worthwell seller workflow</title>
+  <desc id="desc">Six built steps: setup questions, a room or item photo, AI vision appraisal, web comps for items 100 dollars and up, the seller approving or editing each price, then the item board with a revenue total and CSV export.</desc>
+  <defs>
+    <style>
+      .bg{fill:#FBFAF7}
+      .k{font:600 12px Inter,system-ui,sans-serif;fill:#5B8DC9;letter-spacing:.02em}
+      .card{fill:#fff;stroke:#EAF1F8;stroke-width:2}
+      .card-hitl{fill:#fff;stroke:#C9A45C;stroke-width:2.25}
+      .num{font:800 14px Inter,system-ui,sans-serif;fill:#fff}
+      .num-hitl{font:800 14px Inter,system-ui,sans-serif;fill:#1E3557}
+      .label{font:700 16px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
+      .sub{font:500 13px Inter,system-ui,sans-serif;fill:#4a5d75}
+      .pill{font:700 9px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:.02em}
+      .icon{fill:none;stroke:#5B8DC9;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .icon-hitl{fill:none;stroke:#C9A45C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+      .arrow{fill:none;stroke:#5B8DC9;stroke-width:2;stroke-linecap:round}
+    </style>
+    <marker id="ww-arr-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#5B8DC9"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="390" height="1180" rx="4"/>
+  <text class="k" x="20" y="32">Worthwell seller workflow</text>
+  <text class="sub" x="20" y="54">Built path in the private-beta app.</text>
+
+  <g transform="translate(20,72)">
+    <rect class="card" width="350" height="148" rx="6"/>
+    <circle cx="28" cy="28" r="15" fill="#1E3557"/>
+    <text class="num" x="28" y="33" text-anchor="middle">1</text>
+    <g class="icon" transform="translate(286,44)">
+      <rect x="4" y="2" width="28" height="36" rx="3"/>
+      <path d="M11 12 h14M11 20 h14M11 28 h8"/>
+    </g>
+    <text class="label" x="54" y="72">Setup questions</text>
+    <text class="sub" x="54" y="98">Deadline, plan, how to sell, location,</text>
+    <text class="sub" x="54" y="116">whose home. Timeline comes first.</text>
+  </g>
+
+  <g transform="translate(20,240)">
+    <rect class="card" width="350" height="148" rx="6"/>
+    <circle cx="28" cy="28" r="15" fill="#1E3557"/>
+    <text class="num" x="28" y="33" text-anchor="middle">2</text>
+    <g class="icon" transform="translate(286,48)">
+      <path d="M6 12 h24 a4 4 0 0 1 4 4 v18 a4 4 0 0 1-4 4 H6 a4 4 0 0 1-4-4 V16 a4 4 0 0 1 4-4z"/>
+      <circle cx="18" cy="27" r="6"/>
+      <path d="M12 12 l3-6 h10 l3 6"/>
+    </g>
+    <text class="label" x="54" y="72">Room photo</text>
+    <text class="sub" x="54" y="98">One photo of a room, or a single item.</text>
+    <text class="sub" x="54" y="116">Name the room, then mark it done.</text>
+  </g>
+
+  <g transform="translate(20,408)">
+    <rect class="card" width="350" height="148" rx="6"/>
+    <circle cx="28" cy="28" r="15" fill="#1E3557"/>
+    <text class="num" x="28" y="33" text-anchor="middle">3</text>
+    <g class="icon" transform="translate(290,46)">
+      <circle cx="16" cy="18" r="11"/>
+      <path d="M16 7 v3M16 26 v3M5 18 h3M24 18 h3"/>
+      <circle cx="16" cy="18" r="2.5"/>
+    </g>
+    <text class="label" x="54" y="72">AI vision appraisal</text>
+    <text class="sub" x="54" y="98">Each photo is read, and every sellable</text>
+    <text class="sub" x="54" y="116">item gets a price range.</text>
+  </g>
+
+  <g transform="translate(20,576)">
+    <rect class="card" width="350" height="148" rx="6"/>
+    <circle cx="28" cy="28" r="15" fill="#1E3557"/>
+    <text class="num" x="28" y="33" text-anchor="middle">4</text>
+    <g class="icon" transform="translate(290,50)">
+      <circle cx="14" cy="16" r="9"/>
+      <path d="M21 23 L30 32"/>
+    </g>
+    <text class="label" x="54" y="72">Web comps for $100+</text>
+    <text class="sub" x="54" y="98">Public listing comps, on request.</text>
+    <text class="sub" x="54" y="116">Asking prices stay separate from sales.</text>
+  </g>
+
+  <g transform="translate(20,744)">
+    <rect class="card-hitl" width="350" height="164" rx="6"/>
+    <circle cx="28" cy="28" r="15" fill="#C9A45C"/>
+    <text class="num-hitl" x="28" y="33" text-anchor="middle">5</text>
+    <rect x="232" y="16" width="104" height="18" rx="9" fill="#F7EED9"/>
+    <text class="pill" x="284" y="29" text-anchor="middle">HUMAN IN THE LOOP</text>
+    <g class="icon-hitl" transform="translate(294,64)">
+      <circle cx="12" cy="11" r="7"/>
+      <path d="M0 36 a12 12 0 0 1 24 0"/>
+      <path d="M22 10 l5 5 9-11"/>
+    </g>
+    <text class="label" x="54" y="72">Seller approves or edits</text>
+    <text class="sub" x="54" y="98">Every price is a draft until the seller</text>
+    <text class="sub" x="54" y="116">approves or edits it. A timeline change</text>
+    <text class="sub" x="54" y="134">also needs confirmation.</text>
+  </g>
+
+  <g transform="translate(20,928)">
+    <rect class="card" width="350" height="148" rx="6"/>
+    <circle cx="28" cy="28" r="15" fill="#1E3557"/>
+    <text class="num" x="28" y="33" text-anchor="middle">6</text>
+    <g class="icon" transform="translate(286,50)">
+      <rect x="2" y="4" width="32" height="24" rx="3"/>
+      <path d="M8 12 h20M8 20 h12"/>
+    </g>
+    <text class="label" x="54" y="72">Item board</text>
+    <text class="sub" x="54" y="98">Status, filters, and merge or split.</text>
+    <text class="sub" x="54" y="116">A running revenue total, and CSV export.</text>
+  </g>
+
+  <g class="arrow" marker-end="url(#ww-arr-m)">
+    <path d="M195 220 V236"/>
+    <path d="M195 388 V404"/>
+    <path d="M195 556 V572"/>
+    <path d="M195 724 V740"/>
+    <path d="M195 908 V924"/>
+  </g>
+</svg>

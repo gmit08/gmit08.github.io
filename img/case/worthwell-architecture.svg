@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="title desc">
+  <title id="title">Worthwell system architecture</title>
+  <desc id="desc">The Worthwell app, built with TanStack Start, talks to a tested deterministic pricing module and an IndexedDB cache, a Lovable AI gateway for vision appraisal, Firecrawl for web comps, and Lovable Cloud for Postgres, authentication, private photo storage, and owner-only rules. Human approval points: the seller approves or edits each price, and a timeline change needs confirmation.</desc>
+  <defs>
+    <style>
+      .bg{fill:#FBFAF7}
+      .k{font:600 13px Inter,system-ui,sans-serif;fill:#5B8DC9;letter-spacing:.02em}
+      .box{fill:#fff;stroke:#EAF1F8;stroke-width:2}
+      .app{fill:#fff;stroke:#5B8DC9;stroke-width:2}
+      .cloud{fill:#EAF1F8;stroke:#5B8DC9;stroke-width:2}
+      .hitl{fill:#F7EED9;stroke:#C9A45C;stroke-width:2.25}
+      .inner{fill:#FBFAF7;stroke:#EAF1F8;stroke-width:1.5}
+      .title{font:700 18px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
+      .label{font:700 15px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
+      .sub{font:500 12.5px Inter,system-ui,sans-serif;fill:#4a5d75}
+      .pill{font:700 10px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:.02em}
+      .arrow{fill:none;stroke:#5B8DC9;stroke-width:2;stroke-linecap:round}
+      .arrow-hitl{fill:none;stroke:#C9A45C;stroke-width:2.2;stroke-linecap:round}
+    </style>
+    <marker id="wa-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#5B8DC9"/>
+    </marker>
+    <marker id="wa-arr-h" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#C9A45C"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="700" rx="4"/>
+  <text class="k" x="36" y="40">Worthwell system architecture</text>
+  <text class="sub" x="36" y="64">Built pieces only. Gold marks the human approval points: the seller approves or edits each price, and a timeline change needs confirmation.</text>
+
+  <!-- Seller -->
+  <g transform="translate(390,92)">
+    <rect class="hitl" width="420" height="96" rx="6"/>
+    <text class="title" x="210" y="36" text-anchor="middle">Seller</text>
+    <rect x="28" y="52" width="174" height="28" rx="14" fill="#fff" stroke="#C9A45C" stroke-width="1.25"/>
+    <text class="pill" x="115" y="71" text-anchor="middle">APPROVE OR EDIT PRICES</text>
+    <rect x="214" y="52" width="178" height="28" rx="14" fill="#fff" stroke="#C9A45C" stroke-width="1.25"/>
+    <text class="pill" x="303" y="71" text-anchor="middle">CONFIRM TIMELINE CHANGES</text>
+  </g>
+
+  <g class="arrow-hitl" marker-end="url(#wa-arr-h)">
+    <path d="M600 188 V216"/>
+  </g>
+  <text class="pill" x="616" y="210" fill="#1E3557">approvals</text>
+
+  <!-- App -->
+  <g transform="translate(200,224)">
+    <rect class="app" width="800" height="200" rx="8"/>
+    <text class="title" x="400" y="36" text-anchor="middle">Worthwell app (TanStack Start)</text>
+    <text class="sub" x="400" y="58" text-anchor="middle">The product UI: setup, photos, item board, and export</text>
+
+    <g transform="translate(70,84)">
+      <rect class="inner" width="300" height="88" rx="6"/>
+      <text class="label" x="150" y="36" text-anchor="middle">Deterministic pricing module</text>
+      <text class="sub" x="150" y="60" text-anchor="middle">Starting prices and rounding, covered by tests</text>
+    </g>
+    <g transform="translate(430,84)">
+      <rect class="inner" width="300" height="88" rx="6"/>
+      <text class="label" x="150" y="36" text-anchor="middle">IndexedDB cache</text>
+      <text class="sub" x="150" y="60" text-anchor="middle">On-device cache of the sale</text>
+    </g>
+  </g>
+
+  <!-- arrows down to three systems -->
+  <g class="arrow" marker-end="url(#wa-arr)">
+    <path d="M320 424 V456"/>
+    <path d="M600 424 V456"/>
+    <path d="M880 424 V456"/>
+  </g>
+
+  <!-- AI gateway -->
+  <g transform="translate(60,464)">
+    <rect class="box" width="280" height="196" rx="6"/>
+    <text class="label" x="140" y="36" text-anchor="middle">Lovable AI gateway</text>
+    <text class="sub" x="140" y="66" text-anchor="middle">Vision appraisal of each photo.</text>
+    <text class="sub" x="140" y="86" text-anchor="middle">Returns draft items and ranges.</text>
+    <text class="sub" x="140" y="118" text-anchor="middle">Does not set the final price.</text>
+    <text class="sub" x="140" y="138" text-anchor="middle">Installed fixtures are excluded.</text>
+  </g>
+
+  <!-- Firecrawl -->
+  <g transform="translate(460,464)">
+    <rect class="box" width="280" height="196" rx="6"/>
+    <text class="label" x="140" y="36" text-anchor="middle">Firecrawl comps</text>
+    <text class="sub" x="140" y="66" text-anchor="middle">Public listing comps, on request,</text>
+    <text class="sub" x="140" y="86" text-anchor="middle">for items $100 and up.</text>
+    <text class="sub" x="140" y="118" text-anchor="middle">Asking prices stay separate</text>
+    <text class="sub" x="140" y="138" text-anchor="middle">from confirmed sales.</text>
+    <text class="sub" x="140" y="166" text-anchor="middle">Empty results do not invent a link,</text>
+    <text class="sub" x="140" y="184" text-anchor="middle">or change the estimate.</text>
+  </g>
+
+  <!-- Lovable Cloud -->
+  <g transform="translate(860,464)">
+    <rect class="cloud" width="280" height="196" rx="6"/>
+    <text class="label" x="140" y="36" text-anchor="middle">Lovable Cloud</text>
+    <text class="sub" x="140" y="66" text-anchor="middle">Postgres for sales, rooms,</text>
+    <text class="sub" x="140" y="86" text-anchor="middle">items, and photos.</text>
+    <text class="sub" x="140" y="118" text-anchor="middle">Google or email sign-in.</text>
+    <text class="sub" x="140" y="138" text-anchor="middle">Private photo storage.</text>
+    <text class="sub" x="140" y="166" text-anchor="middle">Owner-only rules on every table.</text>
+  </g>
+</svg>

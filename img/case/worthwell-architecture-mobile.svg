@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1110" width="390" height="1110" role="img" aria-labelledby="title desc">
+  <title id="title">Worthwell system architecture</title>
+  <desc id="desc">The Worthwell app, built with TanStack Start, talks to a tested deterministic pricing module and an IndexedDB cache, a Lovable AI gateway for vision appraisal, Firecrawl for web comps, and Lovable Cloud for Postgres, authentication, private photo storage, and owner-only rules. Human approval points: the seller approves or edits each price, and a timeline change needs confirmation.</desc>
+  <defs>
+    <style>
+      .bg{fill:#FBFAF7}
+      .k{font:600 12px Inter,system-ui,sans-serif;fill:#5B8DC9;letter-spacing:.02em}
+      .box{fill:#fff;stroke:#EAF1F8;stroke-width:2}
+      .app{fill:#fff;stroke:#5B8DC9;stroke-width:2}
+      .cloud{fill:#EAF1F8;stroke:#5B8DC9;stroke-width:2}
+      .hitl{fill:#F7EED9;stroke:#C9A45C;stroke-width:2.25}
+      .inner{fill:#FBFAF7;stroke:#EAF1F8;stroke-width:1.5}
+      .title{font:700 16px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
+      .label{font:700 14px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
+      .sub{font:500 12.5px Inter,system-ui,sans-serif;fill:#4a5d75}
+      .pill{font:700 9px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:.02em}
+      .arrow{fill:none;stroke:#5B8DC9;stroke-width:2;stroke-linecap:round}
+      .arrow-hitl{fill:none;stroke:#C9A45C;stroke-width:2.2;stroke-linecap:round}
+    </style>
+    <marker id="wa-arr-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#5B8DC9"/>
+    </marker>
+    <marker id="wa-arr-hm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#C9A45C"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="390" height="1110" rx="4"/>
+  <text class="k" x="20" y="32">Worthwell system architecture</text>
+  <text class="sub" x="20" y="52">Built pieces only. Gold marks human approval.</text>
+
+  <g transform="translate(20,72)">
+    <rect class="hitl" width="350" height="118" rx="6"/>
+    <text class="title" x="175" y="28" text-anchor="middle">Seller</text>
+    <rect x="24" y="44" width="146" height="26" rx="13" fill="#fff" stroke="#C9A45C" stroke-width="1.25"/>
+    <text class="pill" x="97" y="61" text-anchor="middle">APPROVE OR EDIT PRICES</text>
+    <rect x="180" y="44" width="146" height="26" rx="13" fill="#fff" stroke="#C9A45C" stroke-width="1.25"/>
+    <text class="pill" x="253" y="61" text-anchor="middle">CONFIRM TIMELINE CHANGES</text>
+    <text class="sub" x="175" y="98" text-anchor="middle">Nothing is final until the seller acts</text>
+  </g>
+
+  <g class="arrow-hitl" marker-end="url(#wa-arr-hm)">
+    <path d="M195 190 V208"/>
+  </g>
+
+  <g transform="translate(20,216)">
+    <rect class="app" width="350" height="220" rx="8"/>
+    <text class="title" x="175" y="28" text-anchor="middle">Worthwell app</text>
+    <text class="sub" x="175" y="48" text-anchor="middle">TanStack Start · setup, photos, item board</text>
+    <g transform="translate(16,64)">
+      <rect class="inner" width="318" height="64" rx="5"/>
+      <text class="label" x="159" y="26" text-anchor="middle">Deterministic pricing module</text>
+      <text class="sub" x="159" y="48" text-anchor="middle">Starting prices and rounding, covered by tests</text>
+    </g>
+    <g transform="translate(16,138)">
+      <rect class="inner" width="318" height="64" rx="5"/>
+      <text class="label" x="159" y="26" text-anchor="middle">IndexedDB cache</text>
+      <text class="sub" x="159" y="48" text-anchor="middle">On-device cache of the sale</text>
+    </g>
+  </g>
+
+  <g class="arrow" marker-end="url(#wa-arr-m)">
+    <path d="M195 436 V454"/>
+  </g>
+
+  <g transform="translate(20,462)">
+    <rect class="box" width="350" height="150" rx="6"/>
+    <text class="label" x="175" y="32" text-anchor="middle">Lovable AI gateway</text>
+    <text class="sub" x="175" y="62" text-anchor="middle">Vision appraisal of each photo.</text>
+    <text class="sub" x="175" y="82" text-anchor="middle">Returns draft items and ranges.</text>
+    <text class="sub" x="175" y="110" text-anchor="middle">Does not set the final price.</text>
+    <text class="sub" x="175" y="130" text-anchor="middle">Installed fixtures are excluded.</text>
+  </g>
+
+  <g class="arrow" marker-end="url(#wa-arr-m)">
+    <path d="M195 612 V630"/>
+  </g>
+
+  <g transform="translate(20,638)">
+    <rect class="box" width="350" height="168" rx="6"/>
+    <text class="label" x="175" y="32" text-anchor="middle">Firecrawl comps</text>
+    <text class="sub" x="175" y="62" text-anchor="middle">Public listing comps, on request,</text>
+    <text class="sub" x="175" y="82" text-anchor="middle">for items $100 and up.</text>
+    <text class="sub" x="175" y="110" text-anchor="middle">Asking prices stay separate</text>
+    <text class="sub" x="175" y="130" text-anchor="middle">from confirmed sales.</text>
+    <text class="sub" x="175" y="150" text-anchor="middle">Empty results do not invent a link.</text>
+  </g>
+
+  <g class="arrow" marker-end="url(#wa-arr-m)">
+    <path d="M195 806 V824"/>
+  </g>
+
+  <g transform="translate(20,832)">
+    <rect class="cloud" width="350" height="168" rx="6"/>
+    <text class="label" x="175" y="32" text-anchor="middle">Lovable Cloud</text>
+    <text class="sub" x="175" y="62" text-anchor="middle">Postgres for sales, rooms, items, photos.</text>
+    <text class="sub" x="175" y="82" text-anchor="middle">Google or email sign-in.</text>
+    <text class="sub" x="175" y="110" text-anchor="middle">Private photo storage.</text>
+    <text class="sub" x="175" y="130" text-anchor="middle">Owner-only rules on every table.</text>
+  </g>
+
+  <text class="sub" x="195" y="1040" text-anchor="middle">The app sends drafts to the seller. Approved</text>
+  <text class="sub" x="195" y="1058" text-anchor="middle">prices and private photos persist in Lovable Cloud.</text>
+  <text class="sub" x="195" y="1084" text-anchor="middle">Comps do not currently rewrite the price.</text>
+</svg>
