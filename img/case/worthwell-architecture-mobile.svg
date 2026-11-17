@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1110" width="390" height="1110" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 1168" width="390" height="1168" role="img" aria-labelledby="title desc">
   <title id="title">Worthwell system architecture</title>
-  <desc id="desc">The Worthwell app, built with TanStack Start, talks to a tested deterministic pricing module and an IndexedDB cache, a Lovable AI gateway for vision appraisal, Firecrawl for web comps, and Lovable Cloud for Postgres, authentication, private photo storage, and owner-only rules. Human approval points: the seller approves or edits each price, and a timeline change needs confirmation.</desc>
+  <desc id="desc">The Worthwell app, built with TanStack Start, talks to a tested deterministic pricing module and an IndexedDB cache. Calls go first to OpenAI, using GPT-6 Astra for vision appraisal and built-in web search for comps, up to five US resale listings. The Lovable AI gateway is a fallback when there is no key or the call fails. Lovable Cloud holds Postgres, authentication, private photo storage, and owner-only rules. Human approval points: the seller approves or edits each price, and a timeline change needs confirmation.</desc>
   <defs>
     <style>
       .bg{fill:#FBFAF7}
@@ -10,12 +10,14 @@
       .cloud{fill:#EAF1F8;stroke:#5B8DC9;stroke-width:2}
       .hitl{fill:#F7EED9;stroke:#C9A45C;stroke-width:2.25}
       .inner{fill:#FBFAF7;stroke:#EAF1F8;stroke-width:1.5}
+      .fallback{fill:#fff;stroke:#5B8DC9;stroke-width:2;stroke-dasharray:7 5}
       .title{font:700 16px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
       .label{font:700 14px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:-.03em}
       .sub{font:500 12.5px Inter,system-ui,sans-serif;fill:#4a5d75}
       .pill{font:700 9px Inter,system-ui,sans-serif;fill:#1E3557;letter-spacing:.02em}
       .arrow{fill:none;stroke:#5B8DC9;stroke-width:2;stroke-linecap:round}
       .arrow-hitl{fill:none;stroke:#C9A45C;stroke-width:2.2;stroke-linecap:round}
+      .arrow-dash{fill:none;stroke:#5B8DC9;stroke-width:2;stroke-linecap:round;stroke-dasharray:7 5}
     </style>
     <marker id="wa-arr-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#5B8DC9"/>
@@ -24,7 +26,7 @@
       <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#C9A45C"/>
     </marker>
   </defs>
-  <rect class="bg" width="390" height="1110" rx="4"/>
+  <rect class="bg" width="390" height="1168" rx="4"/>
   <text class="k" x="20" y="32">Worthwell system architecture</text>
   <text class="sub" x="20" y="52">Built pieces only. Gold marks human approval.</text>
 
@@ -63,33 +65,42 @@
   </g>
 
   <g transform="translate(20,462)">
-    <rect class="box" width="350" height="150" rx="6"/>
-    <text class="label" x="175" y="32" text-anchor="middle">Lovable AI gateway</text>
-    <text class="sub" x="175" y="62" text-anchor="middle">Vision appraisal of each photo.</text>
-    <text class="sub" x="175" y="82" text-anchor="middle">Returns draft items and ranges.</text>
-    <text class="sub" x="175" y="110" text-anchor="middle">Does not set the final price.</text>
-    <text class="sub" x="175" y="130" text-anchor="middle">Installed fixtures are excluded.</text>
+    <rect class="box" width="350" height="280" rx="6"/>
+    <text class="label" x="175" y="28" text-anchor="middle">OpenAI · GPT-6 Astra</text>
+    <text class="sub" x="175" y="48" text-anchor="middle">Primary path. Calls go here first.</text>
+    <g transform="translate(16,62)">
+      <rect class="inner" width="318" height="96" rx="5"/>
+      <text class="label" x="159" y="24" text-anchor="middle">Vision appraisal</text>
+      <text class="sub" x="159" y="48" text-anchor="middle">Photo in, strict JSON out.</text>
+      <text class="sub" x="159" y="68" text-anchor="middle">Draft items and ranges. Fixtures excluded.</text>
+      <text class="sub" x="159" y="86" text-anchor="middle">Does not set the final price.</text>
+    </g>
+    <g transform="translate(16,168)">
+      <rect class="inner" width="318" height="96" rx="5"/>
+      <text class="label" x="159" y="24" text-anchor="middle">Built-in web search</text>
+      <text class="sub" x="159" y="48" text-anchor="middle">Comps, on request. Up to 5 US listings.</text>
+      <text class="sub" x="159" y="68" text-anchor="middle">Asking prices stay separate from sold.</text>
+      <text class="sub" x="159" y="86" text-anchor="middle">Only cited listings are kept.</text>
+    </g>
+  </g>
+
+  <g class="arrow-dash" marker-end="url(#wa-arr-m)">
+    <path d="M195 742 V764"/>
+  </g>
+  <text class="pill" x="211" y="760" fill="#1E3557">FALLBACK</text>
+
+  <g transform="translate(20,772)">
+    <rect class="fallback" width="350" height="96" rx="6"/>
+    <text class="label" x="175" y="32" text-anchor="middle">Lovable AI gateway · fallback</text>
+    <text class="sub" x="175" y="58" text-anchor="middle">Used when there is no key,</text>
+    <text class="sub" x="175" y="78" text-anchor="middle">or the OpenAI call fails.</text>
   </g>
 
   <g class="arrow" marker-end="url(#wa-arr-m)">
-    <path d="M195 612 V630"/>
+    <path d="M195 868 V886"/>
   </g>
 
-  <g transform="translate(20,638)">
-    <rect class="box" width="350" height="168" rx="6"/>
-    <text class="label" x="175" y="32" text-anchor="middle">Firecrawl comps</text>
-    <text class="sub" x="175" y="62" text-anchor="middle">Public listing comps, on request,</text>
-    <text class="sub" x="175" y="82" text-anchor="middle">for items $100 and up.</text>
-    <text class="sub" x="175" y="110" text-anchor="middle">Asking prices stay separate</text>
-    <text class="sub" x="175" y="130" text-anchor="middle">from confirmed sales.</text>
-    <text class="sub" x="175" y="150" text-anchor="middle">Empty results do not invent a link.</text>
-  </g>
-
-  <g class="arrow" marker-end="url(#wa-arr-m)">
-    <path d="M195 806 V824"/>
-  </g>
-
-  <g transform="translate(20,832)">
+  <g transform="translate(20,894)">
     <rect class="cloud" width="350" height="168" rx="6"/>
     <text class="label" x="175" y="32" text-anchor="middle">Lovable Cloud</text>
     <text class="sub" x="175" y="62" text-anchor="middle">Postgres for sales, rooms, items, photos.</text>
@@ -98,7 +109,7 @@
     <text class="sub" x="175" y="130" text-anchor="middle">Owner-only rules on every table.</text>
   </g>
 
-  <text class="sub" x="195" y="1040" text-anchor="middle">The app sends drafts to the seller. Approved</text>
-  <text class="sub" x="195" y="1058" text-anchor="middle">prices and private photos persist in Lovable Cloud.</text>
-  <text class="sub" x="195" y="1084" text-anchor="middle">Comps do not currently rewrite the price.</text>
+  <text class="sub" x="195" y="1096" text-anchor="middle">The app sends drafts to the seller. Approved</text>
+  <text class="sub" x="195" y="1114" text-anchor="middle">prices and private photos persist in Lovable Cloud.</text>
+  <text class="sub" x="195" y="1140" text-anchor="middle">Comps do not currently rewrite the price.</text>
 </svg>

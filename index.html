@@ -27,6 +27,23 @@ ul{padding-left:20px}li{margin-bottom:10px}footer{padding:40px 0;font:13px Inter
 .shots figure:last-child{margin-bottom:0}
 .shots-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:640px){.shots-row{grid-template-columns:1fr}}
+.ww-shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:30px 0;align-items:start}
+.ww-shots figure{margin:0}
+.ww-shots img{width:100%;height:auto}
+@media(min-width:641px){.ww-shots{gap:16px}}
+.case details.more{margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
+.case details.more+details.more{margin-top:8px;border-top:0;padding-top:8px}
+.case details.more summary{font:700 14px Inter,sans-serif;letter-spacing:-.01em;cursor:pointer;color:var(--ink);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.case details.more summary::-webkit-details-marker{display:none}
+.case details.more summary::after{content:"+";font:700 18px/1 Inter,sans-serif;color:var(--acc)}
+.case details.more[open] summary::after{content:"–"}
+.case details.more summary:hover,.case details.more summary:focus-visible{color:var(--acc)}
+.case details.more .beat{margin-top:16px}
+.case details.more figure{margin:16px 0 8px}
+.ww-cta{margin:36px 0 0;padding-top:10px}
+.ww-cta p{margin:0 0 12px;color:var(--mut);font-size:16px}
+.ww-cta .btn{background:linear-gradient(135deg,var(--blue),#6b4fd8 60%,var(--acc));box-shadow:0 8px 24px rgba(61,90,241,.28)}
+.ww-cta .btn:hover{color:#fff;background:linear-gradient(135deg,var(--acc),#6b4fd8 40%,var(--blue))}
 
 .zoomable{position:relative;display:block;cursor:zoom-in;text-decoration:none;color:inherit;border-radius:4px}
 .zoomable:focus{outline:none}
@@ -84,9 +101,10 @@ body.lb-open .fab{opacity:0!important;pointer-events:none}
 <p class="fn">¹ Benchmarks: <a href="https://www.ashbyhq.com/talent-trends-report/reports/referrals">Ashby</a>, <a href="https://www.careerplug.com/recruiting-metrics-and-kpis/">CareerPlug</a>. Self-reported, Oct–Nov 2026.</p></div>
 <div class="beat"><h4>Learning</h4><p>I'd define a standard, LLM-agnostic data-handling spec for the tracker from day one, so any model (Grok Bot, Cursor, Claude, Gemini, ChatGPT, Muse) could write to it, diversifying usage and matching tasks to each agent's strengths. And I'd build evaluation earlier: a golden set of real application questions with approved answers to score agent accuracy.</p></div></article>
 <article class="case" id="worthwell"><span id="keepsake"></span><div class="k">Case study 02 · Zero to one</div><h3>Worthwell: AI-assisted estate sales for first-time operators and families</h3>
-<div class="meta">AI Product Builder · Independent product development · 2025–present · ChatGPT MVP, Replit prototype, now in private beta through Lovable's She Builds cohort</div>
-<div class="chips"><span class="chip l">Lovable She Builds</span><span class="chip l">Private beta</span><span class="chip l">Photo-grounded LLM</span><span class="chip l">Human-in-the-loop</span><span class="chip l">Pricing decision support</span><span class="chip l">PRD</span></div>
-<p>Since November 10, 2026 I've been iterating on Worthwell, formerly called Keepsake, in Lovable's She Builds cohort, an application-based program I was accepted into. The product is now in private beta.</p>
+<div class="meta">AI Product Builder · Independent product development · 2025–present · Live private beta, built through Lovable's She Builds cohort</div>
+<div class="chips"><span class="chip l">Lovable She Builds</span><span class="chip l">Private beta</span><span class="chip l">Photo-grounded LLM</span><span class="chip l">Human-in-the-loop</span><span class="chip l">Pricing decision support</span></div>
+<p>Worthwell, formerly called Keepsake, is now in live private beta, built through Lovable's She Builds cohort, an application-based program I was accepted into. Families running a first estate sale are often grieving and unsure what anything is worth. I ran a full sale myself with a ChatGPT MVP, then directed the product so a seller can photograph a room, get draft prices, and approve every number before it stands.</p>
+<div class="stat"><div><b>122%</b><span>of the $5K revenue goal, on the ChatGPT MVP pilot sale</span></div><div><b>"Very impressed"</b><span>The family and partners, on the process, the scale one person handled, and the results of that pilot sale</span></div></div>
 <figure>
 <a class="zoomable" href="img/case/worthwell-workflow.svg" role="button" aria-haspopup="dialog" aria-label="Enlarge: Worthwell seller workflow from setup questions to the item board">
 <picture>
@@ -97,51 +115,77 @@ body.lb-open .fab{opacity:0!important;pointer-events:none}
 </a>
 <figcaption>The seller workflow that is built in the Worthwell private-beta app. Every price stays a draft until the seller approves or edits it.</figcaption>
 </figure>
-<div class="beat"><h4>Context</h4><p>Most families running an estate sale have never done one. They're often grieving, short on time, and unsure what anything is worth. Professional estate sale companies typically take a 35–40% commission, and 48% are one- or two-person teams (EstateSales.NET 2023 industry survey). Worthwell helps families running their first estate sale catalog and price a home's belongings for what they're worth. I renamed it from Keepsake because a well provides water and nourishment.</p></div>
-<div class="beat"><h4>Problem</h4><p>In October–December 2025 I ran a full estate liquidation for a family friend, my first. The goal I set with the family was $5K. The decision I owned: how to price, stage and sell hundreds of items without professional tools or experience, what to sell, donate or keep, and how to design a system that would help me do that well.</p></div>
-<div class="beat"><h4>My role</h4><p>I ran the sale end to end and designed the tool I ran it with: a photo-grounded ChatGPT Project, used with Google Sheets, Excel and Google Photos, for inventory, pricing guidance and sale-day operations. I made the keep, sell and donate calls myself, using decision rules I worked out with the LLM. After the sale I wrote a PRD with 22 functional requirements and a data model, then a one-prompt Replit prototype. On November 12, 2026 I compiled a Rebuild Spec from the ChatGPT project, and I'm now building Worthwell in Lovable from that PRD and spec. The app is in private beta.</p></div>
-<div class="beat"><h4>Process &amp; trade-offs</h4><ul>
+<div class="ww-shots">
+<!-- Worthwell beta screenshots (up to 4) in this 2-up grid. Source files arrive in /workspace/portfolio/worthwell-shots/. -->
+<figure>
+<a class="zoomable" href="img/case/worthwell-start-screen.webp" role="button" aria-haspopup="dialog" aria-label="Enlarge: Worthwell private-beta start screen">
+<img src="img/case/worthwell-start-screen.webp" alt="Worthwell private-beta start screen. Headline: Start with a photo of a room. The seller can take a room photo, choose one from the library, or switch to a single item, and can choose a selling timeline. Photos stay on the device until sign-in." width="534" height="400">
+<span class="zoomable-hint">Tap to enlarge</span>
+</a>
+<figcaption>The live private-beta start screen. A seller begins with a room or item photo.</figcaption>
+</figure>
+<figure>
+<a class="zoomable" href="img/case/worthwell-setup.webp" role="button" aria-haspopup="dialog" aria-label="Enlarge: Worthwell selling-timeline question">
+<img src="img/case/worthwell-setup.webp" alt="Worthwell private-beta setup question: How soon are you hoping to sell? Options are Within 10 days, In 2–3 weeks, More than 3 weeks, and Not sure yet. The screen notes that not sure yet is fine." width="600" height="450">
+<span class="zoomable-hint">Tap to enlarge</span>
+</a>
+<figcaption>Setup asks how soon the seller hopes to sell, before the first appraisal.</figcaption>
+</figure>
+<figure>
+<a class="zoomable" href="img/case/worthwell-approve.webp" role="button" aria-haspopup="dialog" aria-label="Enlarge: Worthwell edit-and-approve item screen">
+<img src="img/case/worthwell-approve.webp" alt="Worthwell private-beta item editor for Edit item number 26. The seller can change what it is, the description, condition, plan, value range, pricing tier, and list price, then tap Save and approve. A Comparable listings section offers Find comparisons." width="1290" height="2098">
+<span class="zoomable-hint">Tap to enlarge</span>
+</a>
+<figcaption>The seller reviews an item and approves the list price.</figcaption>
+</figure>
+<figure>
+<a class="zoomable" href="img/case/worthwell-item-board.webp" role="button" aria-haspopup="dialog" aria-label="Enlarge: Worthwell item board">
+<img src="img/case/worthwell-item-board.webp" alt="Worthwell private-beta item board, showing a sale header, a running total, a Next: 26 prices need your OK bar, and two item cards tagged Needs your OK, priced at $75 and $59." width="1290" height="2097">
+<span class="zoomable-hint">Tap to enlarge</span>
+</a>
+<figcaption>The item board, with a running total and prices waiting for the seller's OK.</figcaption>
+</figure>
+</div>
+<details class="more">
+<summary>Process and trade-offs</summary>
+<div class="beat">
+<p>Most families running an estate sale have never done one. They're often grieving, short on time, and unsure what anything is worth. Professional estate sale companies typically take a 35–40% commission, and 48% are one- or two-person teams (EstateSales.NET 2023 industry survey). In October–December 2025 I ran a full estate liquidation for a family friend, my first. The goal I set with the family was $5K. The decision I owned: how to price, stage and sell hundreds of items without professional tools or experience, what to sell, donate or keep, and how to design a system that would help me do that well.</p>
+<p>I ran the sale end to end and designed the tool I ran it with: a photo-grounded ChatGPT Project, used with Google Sheets, Excel and Google Photos, for inventory, pricing guidance and sale-day operations. I made the keep, sell and donate calls myself, using decision rules I worked out with the LLM. After the sale I directed and shaped the requirements, drafted with ChatGPT, then a one-prompt Replit prototype. I'm now building Worthwell in Lovable, and the app is in live private beta.</p>
+<ul>
 <li><b>Chat-first MVP instead of building an app first</b>, so I could test the idea on a real sale with real stakes in weeks. The path has been a ChatGPT Project with Google Sheets, Excel and Google Photos, then a Replit prototype, then Lovable.</li>
 <li><b>Photo-grounded cataloging, in the ChatGPT MVP.</b> I uploaded photos room by room, and the assistant drafted identification, description, condition, fair market value, low and high estimates, and a starting price. I cataloged 406 items this way, and I checked items over $100 against local comps.</li>
-<li><b>A pricing system that keeps fair market value separate from list price.</b> In the MVP I named four tiers — Price-to-Sell, Standard, Premium and Rare — and used a markdown schedule. Items under $100 went into group posts; items $100 and up got their own Facebook Marketplace listings.</li>
+<li><b>A pricing system that keeps fair market value separate from list price.</b> In the MVP I named four tiers — Price-to-Sell, Standard, Premium and Rare — and used a markdown schedule. The live beta uses three tiers — Price-to-Sell, Standard, and a combined Premium / Rare — and five conditions. A tested pricing module, not the model, sets the starting price. Items under $100 went into group posts; items $100 and up got their own Facebook Marketplace listings.</li>
 <li><b>Sell, donate, or keep, with a family claim step.</b> During the pilot sale, the family claimed items from a shared photo album by a deadline before anything went to market.</li>
 <li><b>Sale operations around the catalog:</b> Facebook listing copy, flyers, a cash and Zelle transaction log, family revenue updates, and a bulk-buyer offer with a 10% courtesy discount.</li>
-<li><b>I caught the model's failure modes and designed the PRD around them.</b> It invented comps, claimed work was still processing when it wasn't, let labels drift, and missed or misidentified items. The PRD keeps a human approving AI output before it's saved, and treats a suggested value as unverified until it has a source.</li>
-<li><b>What's built in the Worthwell private beta.</b> The seller answers setup questions — including the timeline — before the first appraisal. A room photo or a single-item photo is appraised, and every sellable item comes back with a price range. On request, items $100 and up can be checked against public listing comps, with asking prices kept separate from confirmed sales. Every price stays a draft until the seller approves or edits it; a timeline change also needs confirmation. An item board holds status, filters, merge and split, a running revenue total, and a CSV export. Sellers can sign in with Google or email. Photos are stored privately, and each sale is visible only to its owner. Cross-device saving is still in progress.</li>
+<li><b>I caught the model's failure modes and designed the product around them.</b> It invented comps, claimed work was still processing when it wasn't, let labels drift, and missed or misidentified items. The beta keeps a human approving AI output before it's saved, and treats a suggested value as unverified until it has a source.</li>
+<li><b>What's built in the Worthwell private beta.</b> The seller answers setup questions — including the timeline — before the first appraisal. A room photo or a single-item photo is appraised with GPT-6 Astra, and every sellable item comes back with a price range. On request, comps use OpenAI's built-in web search: up to five US resale listings, with asking prices kept separate from confirmed sales, and only listings the model actually cited are kept. Calls go to OpenAI first; the Lovable AI gateway is the fallback if there is no key or the call fails. Every price stays a draft until the seller approves or edits it; a timeline change also needs confirmation. An item board holds status, filters, merge and split, a running revenue total, and a CSV export. Sellers can sign in with Google or email. Photos are stored privately, and each sale is visible only to its owner.</li>
 </ul>
+<p>The ChatGPT MVP pilot sale brought in $6,096 in estate sale revenue against a $5K goal, 22% over target, after cataloging 406 items. The family I ran it for and several partners told me they were "very impressed" with the process I built, the scale one person was able to handle, and the results. I also got positive feedback from local bulk antique buyers, customers, and partners, including a junk removal company that also runs estate sales.</p>
+</div>
+</details>
+<details class="more">
+<summary>How the app is put together</summary>
 <figure>
 <a class="zoomable" href="img/case/worthwell-architecture.svg" role="button" aria-haspopup="dialog" aria-label="Enlarge: Worthwell system architecture, with human approval points marked">
 <picture>
 <source media="(max-width:640px)" srcset="img/case/worthwell-architecture-mobile.svg">
-<img src="img/case/worthwell-architecture.svg" alt="Diagram of Worthwell's system architecture. The seller sits above the Worthwell app, built with TanStack Start, and two human approval points are marked: approve or edit each price, and confirm a timeline change. Inside the app are a deterministic pricing module covered by tests, and an IndexedDB cache. The app talks to a Lovable AI gateway for vision appraisal, Firecrawl for web comps on items $100 and up, and Lovable Cloud for Postgres, Google or email sign-in, private photo storage, and owner-only rules." width="1200" height="700">
+<img src="img/case/worthwell-architecture.svg" alt="Diagram of Worthwell's system architecture. The seller sits above the Worthwell app, built with TanStack Start, and two human approval points are marked: approve or edit each price, and confirm a timeline change. Inside the app are a deterministic pricing module covered by tests, and an IndexedDB cache. Calls go first to OpenAI, using GPT-6 Astra for vision appraisal and built-in web search for comps, up to five US resale listings. The Lovable AI gateway is a fallback when there is no key or the call fails. Lovable Cloud holds Postgres, Google or email sign-in, private photo storage, and owner-only rules." width="1200" height="820">
 </picture>
 <span class="zoomable-hint">Tap to enlarge</span>
 </a>
-<figcaption>How the private-beta app is put together. A tested pricing module, not the model, sets the starting price. Gold marks the human approval points.</figcaption>
+<figcaption>How the private-beta app is put together. Calls go to OpenAI (GPT-6 Astra) first; the Lovable AI gateway is a fallback. A tested pricing module, not the model, sets the starting price. Gold marks the human approval points.</figcaption>
 </figure>
-</div>
-<div class="beat"><h4>Outcome</h4>
-<div class="stat"><div><b>122%</b><span>of the $5K revenue goal, on the ChatGPT MVP pilot sale</span></div><div><b>"Very impressed"</b><span>The family and partners, on the process, the scale one person handled, and the results of that pilot sale</span></div></div>
-<p>The ChatGPT MVP pilot sale brought in $6,096 in estate sale revenue against a $5K goal, 22% over target. I cataloged 406 items. The family I ran it for and several partners told me they were "very impressed" with the process I built, the scale one person was able to handle, and the results. I also got positive feedback from local bulk antique buyers, customers, and partners, including a junk removal company that also runs estate sales. A one-prompt Replit prototype followed, and Worthwell is now in private beta on Lovable.</p>
-<div class="shots">
-<figure>
-<img src="img/case/keepsake-replit-overview.webp" alt="Keepsake Replit first pass: a sale overview showing value by room and recent activity, with demo data." width="1270" height="742">
-<figcaption>Replit first pass: sale overview with value by room. A one-prompt prototype, shown with demo data.</figcaption>
-</figure>
-<div class="shots-row">
-<figure>
-<img src="img/case/keepsake-replit-item.png" alt="Keepsake item page for a walnut drop-leaf dining table, with a pricing desk and an AI listing draft." width="1024" height="594">
-<figcaption>Item page with a pricing desk and AI listing draft.</figcaption>
-</figure>
-<figure>
-<img src="img/case/keepsake-replit-checkout.png" alt="Keepsake sale-day checkout, with items ready to sell and a current-sale total." width="1024" height="594">
-<figcaption>Sale-day checkout.</figcaption>
-</figure>
-</div>
-</div>
-<p class="note">Next, still designed and not yet in the app: four-tier pricing with condition factors; a fixed 17-column export; deadline-based markdowns that can be skipped or undone, and that protect items with an active buyer lead; list, sell, bundle, or donate recommendations; a sales ledger; family review by a shared link; and payments. Facebook listing drafts can already be written; posting still stays manual.</p>
-</div>
-<div class="beat"><h4>Learning</h4><p>The model was useful for first drafts and less trustworthy as a source of truth. I'd put a human approval step on every AI output before it's saved, and I'd treat a suggested price or comp as unverified until it has a source, from day one — instead of discovering mid-sale that the model could invent comps, claim it was still processing, let labels drift, or miss items. Those two rules are now in the Worthwell beta: the seller approves or edits every price, and a tested pricing module — not the model — sets the starting number.</p></div></article>
+</details>
+<details class="more">
+<summary>What I learned</summary>
+<div class="beat"><p>The model was useful for first drafts and less trustworthy as a source of truth. I'd put a human approval step on every AI output before it's saved, and I'd treat a suggested price or comp as unverified until it has a source, from day one — instead of discovering mid-sale that the model could invent comps, claim it was still processing, let labels drift, or miss items. Those two rules are now in the Worthwell beta: the seller approves or edits every price, and a tested pricing module — not the model — sets the starting number.</p></div>
+</details>
+<details class="more">
+<summary>What's next</summary>
+<p class="note">Still designed and not yet in the app: four-tier pricing with condition factors; a fixed 17-column export; deadline-based markdowns that can be skipped or undone, and that protect items with an active buyer lead; list, sell, bundle, or donate recommendations; a sales ledger; family review by a shared link; and payments. Facebook listing drafts can already be written; posting still stays manual.</p>
+</details>
+<div class="ww-cta"><p>Want the deeper walkthrough? Request a call.</p><a class="btn" href="https://calendly.com/genevieve-mitchell/30min">Request a call</a></div>
+</article>
 <article class="case" id="one10">
 <div class="k">Case study 03 · Product operations</div>
 <h3>One10: standing up product operations so core-versus-custom decisions were repeatable</h3>
