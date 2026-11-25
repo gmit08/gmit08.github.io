@@ -203,4 +203,5 @@ function open(a){ensure();lastFocus=document.activeElement;var src=a.getAttribut
 function close(){if(!lb||!lb.classList.contains("on"))return;lb.classList.remove("on");document.body.classList.remove("lb-open");zoomed=false;if(lastFocus)lastFocus.focus()}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a.zoomable");if(a){e.preventDefault();open(a)}});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")close();else if(e.key==="Tab"&&lb&&lb.classList.contains("on")){e.preventDefault();closer.focus()}else if((e.key===" "||e.key==="Spacebar")&&e.target.closest&&e.target.closest("a.zoomable")){e.preventDefault();open(e.target.closest("a.zoomable"))}});
-})()</script></body></html>
+})()</script><!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "34a5645b10d044a184e4be6811f8e93f"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
